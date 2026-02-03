@@ -130,16 +130,16 @@ const handleCancelEdit = () => {
 
   // ---------------- DOWNLOAD HELPERS ----------------
 
-  const triggerDownloadFromBase64 = (base64DataUrl, fileName) => {
-    if (!base64DataUrl) return;
+  // const triggerDownloadFromBase64 = (base64DataUrl, fileName) => {
+  //   if (!base64DataUrl) return;
 
-    const link = document.createElement("a");
-    link.href = base64DataUrl; // already data:image/png;base64,...
-    link.download = fileName;
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
+  //   const link = document.createElement("a");
+  //   link.href = base64DataUrl; // already data:image/png;base64,...
+  //   link.download = fileName;
+  //   document.body.appendChild(link);
+  //   link.click();
+  //   document.body.removeChild(link);
+  // };
 
   // const handleDownloadBarcode = (product) => {
   //   triggerDownloadFromBase64(
