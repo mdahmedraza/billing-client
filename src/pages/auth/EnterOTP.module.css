@@ -1,0 +1,254 @@
+/* Keep same theme and naming as your Signup.module.css but tuned for OTP page */
+
+.signupContainer {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #eef2f7, #f8f9fb);
+  padding: 20px;
+  font-family: "Inter", sans-serif;
+}
+
+.signupCard {
+  display: grid;
+  grid-template-columns: 1fr;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  width: 100%;
+  max-width: 900px;
+}
+
+@media (min-width: 768px) {
+  .signupCard {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.leftPanel {
+  background: linear-gradient(160deg, #e8edff, #fef5ff);
+  padding: 50px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.leftPanel h2 {
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 10px;
+}
+
+.leftPanel p {
+  font-size: 0.95rem;
+  color: #475569;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.infoCards {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.cardItem {
+  flex: 1;
+  background: #ffffffb5;
+  border: 1px dashed #cbd5e1;
+  border-radius: 10px;
+  padding: 15px;
+  min-width: 120px;
+  transition: all 0.3s ease;
+}
+
+.cardItem:hover {
+  transform: scale(1.03);
+}
+
+.cardItem h3 {
+  font-size: 0.9rem;
+  color: #1e293b;
+  margin-bottom: 6px;
+}
+
+.cardItem p {
+  font-size: 0.8rem;
+  color: #64748b;
+}
+
+.highlight {
+  background: linear-gradient(145deg, #eef2ff, #fff0f8);
+  border: none;
+}
+
+/* Right form container */
+.formContainer {
+  padding: 40px 35px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 25px;
+}
+
+.header h1 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.header p {
+  font-size: 0.9rem;
+  color: #64748b;
+  margin-top: 3px;
+}
+
+.subText {
+  font-size: 0.8rem;
+  color: #cbd5e1;
+}
+
+/* Form */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #475569;
+  margin-bottom: 8px;
+}
+
+/* OTP inputs */
+.otpWrap {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 6px;
+}
+
+.otpInput {
+  width: 48px;
+  height: 56px;
+  text-align: center;
+  font-size: 1.25rem;
+  border-radius: 10px;
+  border: 1px solid #cbd5e1;
+  outline: none;
+  transition: all 0.15s ease;
+  background: #fff;
+}
+
+.otpInput:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.08);
+}
+
+/* Buttons and links */
+.row {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.signupBtn {
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  border: none;
+  color: white;
+  font-weight: 600;
+  padding: 12px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex: 1;
+}
+
+.signupBtn:hover {
+  transform: scale(1.02);
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+}
+
+.ghostBtn {
+  background: transparent;
+  border: 1px solid #cbd5e1;
+  padding: 10px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.ghostBtn:hover {
+  background: #f8f9ff;
+}
+
+/* Timer and resend */
+.timerRow {
+  margin-top: 8px;
+  min-height: 28px;
+}
+
+.timerRow p {
+  color: #475569;
+}
+
+.resendBtn {
+  background: transparent;
+  border: none;
+  color: #6366f1;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 6px 10px;
+  border-radius: 6px;
+}
+
+.resendBtn:hover {
+  text-decoration: underline;
+}
+
+.infoText {
+  color: #94a3b8;
+  font-size: 0.9rem;
+}
+
+.loginLink {
+  text-align: center;
+  margin-top: 6px;
+  color: #475569;
+  font-size: 0.9rem;
+}
+
+.link {
+  color: #6366f1;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.terms {
+  font-size: 0.75rem;
+  color: #94a3b8;
+  text-align: center;
+  margin-top: 6px;
+}
+
+.footer {
+  text-align: center;
+  font-size: 0.75rem;
+  color: #94a3b8;
+  margin-top: 18px;
+}
