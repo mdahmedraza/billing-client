@@ -18,14 +18,14 @@ const Products = () => {
   }, [dispatch]);
   // ---------------- WARRANTY HELPERS ----------------
 
-const getWarrantyExpiryDate = (createdAt, warrantyMonths) => {
-  if (!createdAt || !warrantyMonths) return "-";
+// const getWarrantyExpiryDate = (createdAt, warrantyMonths) => {
+//   if (!createdAt || !warrantyMonths) return "-";
 
-  const expiryDate = new Date(createdAt);
-  expiryDate.setMonth(expiryDate.getMonth() + Number(warrantyMonths));
+//   const expiryDate = new Date(createdAt);
+//   expiryDate.setMonth(expiryDate.getMonth() + Number(warrantyMonths));
 
-  return expiryDate.toLocaleDateString();
-};
+//   return expiryDate.toLocaleDateString();
+// };
 
 const isWarrantyExpired = (createdAt, warrantyMonths) => {
   if (!createdAt || !warrantyMonths) return false;
@@ -141,81 +141,81 @@ const handleCancelEdit = () => {
     document.body.removeChild(link);
   };
 
-  const handleDownloadBarcode = (product) => {
-    triggerDownloadFromBase64(
-      product.barcodeImage,
-      `${product.productName || "product"}-barcode.png`
-    );
-  };
+  // const handleDownloadBarcode = (product) => {
+  //   triggerDownloadFromBase64(
+  //     product.barcodeImage,
+  //     `${product.productName || "product"}-barcode.png`
+  //   );
+  // };
 
-  const handleDownloadQR = (product) => {
-    triggerDownloadFromBase64(
-      product.qrCode,
-      `${product.productName || "product"}-qrcode.png`
-    );
-  };
+  // const handleDownloadQR = (product) => {
+  //   triggerDownloadFromBase64(
+  //     product.qrCode,
+  //     `${product.productName || "product"}-qrcode.png`
+  //   );
+  // };
 
 
-  const handleDownloadSticker = (product) => {
-  const canvas = canvasRef.current;
-  if (!canvas || !product.barcodeImage || !product.qrCode) return;
+//   const handleDownloadSticker = (product) => {
+//   const canvas = canvasRef.current;
+//   if (!canvas || !product.barcodeImage || !product.qrCode) return;
 
-  const ctx = canvas.getContext("2d");
+//   const ctx = canvas.getContext("2d");
 
-  // Sticker size (you can tweak)
-  const width = 600;
-  const height = 800;
-  canvas.width = width;
-  canvas.height = height;
+//   // Sticker size (you can tweak)
+//   const width = 600;
+//   const height = 800;
+//   canvas.width = width;
+//   canvas.height = height;
 
-  // White background
-  ctx.fillStyle = "#ffffff";
-  ctx.fillRect(0, 0, width, height);
+//   // White background
+//   ctx.fillStyle = "#ffffff";
+//   ctx.fillRect(0, 0, width, height);
 
-  // Load both images
-  const barcodeImg = new Image();
-  const qrImg = new Image();
+//   // Load both images
+//   const barcodeImg = new Image();
+//   const qrImg = new Image();
 
-  barcodeImg.crossOrigin = "anonymous";
-  qrImg.crossOrigin = "anonymous";
+//   barcodeImg.crossOrigin = "anonymous";
+//   qrImg.crossOrigin = "anonymous";
 
-  barcodeImg.onload = () => {
-    qrImg.onload = () => {
-      ctx.fillStyle = "#ffffff";
-      ctx.fillRect(0, 0, width, height);
+//   barcodeImg.onload = () => {
+//     qrImg.onload = () => {
+//       ctx.fillStyle = "#ffffff";
+//       ctx.fillRect(0, 0, width, height);
 
-      const padding = 40;
+//       const padding = 40;
 
-      // draw barcode full width (keep aspect ratio)
-      const bRatio = barcodeImg.width / barcodeImg.height;
-      const bDrawWidth = width - padding * 2;
-      const bDrawHeight = bDrawWidth / bRatio;
-      ctx.drawImage(
-        barcodeImg,
-        padding,
-        padding,
-        bDrawWidth,
-        bDrawHeight
-      );
+//       // draw barcode full width (keep aspect ratio)
+//       const bRatio = barcodeImg.width / barcodeImg.height;
+//       const bDrawWidth = width - padding * 2;
+//       const bDrawHeight = bDrawWidth / bRatio;
+//       ctx.drawImage(
+//         barcodeImg,
+//         padding,
+//         padding,
+//         bDrawWidth,
+//         bDrawHeight
+//       );
 
-      // draw QR below, centered
-      const qAvailableWidth = width - padding * 2;
-      const qSize = Math.min(qAvailableWidth, height - bDrawHeight - padding * 3);
-      const qX = (width - qSize) / 2;
-      const qY = padding * 2 + bDrawHeight;
-      ctx.drawImage(qrImg, qX, qY, qSize, qSize);
+//       // draw QR below, centered
+//       const qAvailableWidth = width - padding * 2;
+//       const qSize = Math.min(qAvailableWidth, height - bDrawHeight - padding * 3);
+//       const qX = (width - qSize) / 2;
+//       const qY = padding * 2 + bDrawHeight;
+//       ctx.drawImage(qrImg, qX, qY, qSize, qSize);
 
-      const dataUrl = canvas.toDataURL("image/png");
-      triggerDownloadFromBase64(
-        dataUrl,
-        `${product.productName || "product"}-sticker.png`
-      );
-    };
-    qrImg.src = product.qrCode;
-  };
+//       const dataUrl = canvas.toDataURL("image/png");
+//       triggerDownloadFromBase64(
+//         dataUrl,
+//         `${product.productName || "product"}-sticker.png`
+//       );
+//     };
+//     qrImg.src = product.qrCode;
+//   };
 
-  barcodeImg.src = product.barcodeImage;
-};
+//   barcodeImg.src = product.barcodeImage;
+// };
 
 
   if (createLoading) return <LoadingScreen />;

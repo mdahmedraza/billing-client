@@ -94,19 +94,19 @@ const isWarrantyExpired = (createdAt, warrantyMonths) => {
     document.body.removeChild(link);
   };
 
-  const handleDownloadBarcode = (product) => {
-    triggerDownloadFromBase64(
-      product.barcodeImage,
-      `${product.productName || "product"}-barcode.png`
-    );
-  };
+  // const handleDownloadBarcode = (product) => {
+  //   triggerDownloadFromBase64(
+  //     product.barcodeImage,
+  //     `${product.productName || "product"}-barcode.png`
+  //   );
+  // };
 
-  const handleDownloadQR = (product) => {
-    triggerDownloadFromBase64(
-      product.qrCode,
-      `${product.productName || "product"}-qrcode.png`
-    );
-  };
+  // const handleDownloadQR = (product) => {
+  //   triggerDownloadFromBase64(
+  //     product.qrCode,
+  //     `${product.productName || "product"}-qrcode.png`
+  //   );
+  // };
 
 
   const handleDownloadSticker = (product) => {

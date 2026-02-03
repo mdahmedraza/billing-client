@@ -6,12 +6,12 @@ import {
   Home,
   Package,
   ShoppingCart,
-  Users,
-  Folder,
-  Ticket,
-  MessageSquare,
-  BarChart2,
-  Settings,
+  // Users,
+  // Folder,
+  // Ticket,
+  // MessageSquare,
+  // BarChart2,
+  // Settings,
   LogOut,
 } from "lucide-react";
 
